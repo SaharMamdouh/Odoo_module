@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+
+    <record id="medicine_moves_form_view" model="ir.ui.view">
+      <field name="name">medicine_moves_view_form</field>
+      <field name="model">custom_module_name.moves</field>
+      <field name="arch" type="xml">
+        <form string="Moves">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="quantity"/>
+              <field name="timestamp"/>
+              <field name="medicine"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="medicine_moves_tree_view" model="ir.ui.view">
+      <field name="name">medicine_moves_view_tree</field>
+      <field name="model">custom_module_name.moves</field>
+      <field name="arch" type="xml">
+        <tree string="Moves">
+          <field name="name"/>
+          <field name="quantity"/>
+          <field name="timestamp"/>
+          <field name="medicine"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="medicine_moves_action_window" model="ir.actions.act_window">
+        <field name="name">Moves</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">custom_module_name.moves</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="medicine_moves_action_menu" name="Moves"
+              parent="custom_module_name.medicine"
+              action="medicine_moves_action_window" sequence="20"/>
+
+  </data>
+</odoo>
